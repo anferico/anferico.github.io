@@ -23,14 +23,26 @@
     <div class="row">
       <div class="col-xl-8 offset-xl-2 col-lg-10 offset-lg-1">
         <div class="{{ include.type }}-heading">
-          <h1>{% if page.title %}{{ page.title | strip_html }}{% else %}<br/>{% endif %}</h1>
+          <h2 style="text-align: center;">{% if page.title %}{{ page.title | strip_html }}{% else %}<br/>{% endif %}</h2>
           {% if page.subtitle %}
-            {% if include.type == "page" %}
+            <hr class="small">
+            {% if include.type == "post" %}
+              <h4 style="font-weight: 300; text-align: center;">{{ page.subtitle | strip_html }}</h4>
+              <br/>
+            {% else %}
+              <div style="display: flex; justify-content: center; align-items: center; width: 100%; height: 20px;">
+              <h4 style="font-weight: 300; margin: 0 6px 0 0;">{{ page.subtitle | strip_html }}</h4>
+                {% if page.name == "index.html" %}
+                  <img src="{{ site.baseurl }}/assets/img/kekw.png" style="max-width: 20px; height: auto; align-self: center; border-radius: 3px;">
+                {% endif %}
+              </div>
+            {% endif %}
+            <!-- {% if include.type == "page" %}
               <hr class="small">
               <span class="{{ include.type }}-subheading">{{ page.subtitle | strip_html }}</span>
             {% else %}
               <h2 class="{{ include.type }}-subheading">{{ page.subtitle | strip_html }}</h2>
-            {% endif %}
+            {% endif %} -->
           {% endif %}
           
           {% if include.type == "post" %} 
