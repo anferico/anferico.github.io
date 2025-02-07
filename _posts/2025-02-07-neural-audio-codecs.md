@@ -191,6 +191,8 @@ $$
 \end{align}
 $$
 
+where $$p$$ and $$q$$ are the sequence lengths of the text and audio after the tokenization/quantization process.
+
 So what can we do with audio tokenizers? Well, exactly the same things we can do with regular tokenizers, for instance training *language models* on their output. [AudioLM](https://arxiv.org/abs/2209.03143) picks up on this idea to train an audio language model in a purely self-supervised fashion, achieving remarkable performance on audio and speech continuation given a short prompt. On the other hand, [VALL-E](https://arxiv.org/abs/2301.02111) performs speech synthesis via text-conditioned audio language modeling.
 
 ## Wrapping up
