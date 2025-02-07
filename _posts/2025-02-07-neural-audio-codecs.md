@@ -130,7 +130,7 @@ Finally, we can obtain an approximation for $$V_q$$ as:
 
 $$\tilde{V}_q = \sum_{j=1}^m \tilde{V}_q^j$$
 
-This last bit of insight isn't necessarily obvious, so let's devote a little more time to it. In particular, let's focus on very last expression:
+This last bit of insight isn't necessarily obvious, so let's devote a little more time to it. In particular, let's focus on the very last expression:
 
 $$
 \tilde{V}_q^m = \text{quant}(C_m, V_q - \sum_{j=1}^{m-1} \tilde{V}_q^j)
@@ -196,7 +196,7 @@ where $$p$$ and $$q$$ are the sequence lengths of the text and audio after the t
 So what can we do with audio tokenizers? Well, exactly the same things we can do with regular tokenizers, for instance training *language models* on their output. [AudioLM](https://arxiv.org/abs/2209.03143) picks up on this idea to train an audio language model in a purely self-supervised fashion, achieving remarkable performance on audio and speech continuation given a short prompt. On the other hand, [VALL-E](https://arxiv.org/abs/2301.02111) performs speech synthesis via text-conditioned audio language modeling.
 
 ## Wrapping up
-Despite their original intent, which was to push the boundaries of audio compression while still retaining high percetual quality, Neural Audio Codecs also serve as a crucial building block for modern audio AI models by providing a way to discretize audio into learnable, token-like representations. This tokenization capability has enabled breakthrough models like AudioLM and VALL-E to treat audio generation similarly to how language models handle text generation, opening up exciting possibilities in speech synthesis, audio continuation, speech to speech translation, and other audio-related tasks.
+Despite their original intent, which was to push the boundaries of audio compression while still retaining high perceptual quality, Neural Audio Codecs also serve as a crucial building block for modern audio AI models by providing a way to discretize audio into learnable, token-like representations. This tokenization capability has enabled breakthrough models like AudioLM and VALL-E to treat audio generation similarly to how language models handle text generation, opening up exciting possibilities in speech synthesis, audio continuation, speech to speech translation, and other audio-related tasks.
 
 <!-- Here's a table:
 
