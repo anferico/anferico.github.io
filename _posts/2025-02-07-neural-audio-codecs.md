@@ -48,11 +48,11 @@ Codecs can be categorized along two orthogonal dimensions:
 **Lossless** codecs, on the other hand, are codecs that can retain _all_ the original information while still being able to shrink the data a little bit. Examples of lossless codecs are [FLAC](https://en.wikipedia.org/wiki/FLAC) for audio and [PNG](https://en.wikipedia.org/wiki/PNG) for images.
 
 <div class="box-hands-on" markdown="1">
-🙌 **Hands-on**: proof that FLAC is a lossless audio codec
+🙌 **Hands-on**: proof that FLAC is a lossless audio codec (requires `ffmpeg`)
 
 **Step 1**: Get a WAV file off the internet (or find one in your machine)
 ```sh
-wget https://samples-files.com/samples/Audio/wav/sample-file-3.wav -O audio-original.wav
+wget https://samples-files.com/samples/audio/wav/sample-file-3.wav -O audio-original.wav
 ```
 **Step 2**: Compress it using `ffmpeg` and the FLAC codec
 ```sh
@@ -149,7 +149,7 @@ V_q \approx \tilde{V}_q^m + \sum_{j=1}^{m-1} \tilde{V}_q^j = \sum_{j=1}^{m} \til
 $$
 
 So while in the case of VQ the probability of two vectors $$V^1$$ and $$V^2$$ being approximated with the same codebook vector $$V_C^i$$ was $$1 / n$$, said probability shrinks to $$(1 / n)^m$$ in the case of RVQ.
-At this point you might wonder: couldn't you simply use plain VQ with a larger codebook? If we were to employ a codebook with $$n^m$$ vectors, the probability of "collision" would also be $$(1 / n)^m$$. Seems reasonable, doesn't it? Well, let me explain why RVQ is still a better choice than VQ with a larger codebook in this case.
+At this point you might wonder: couldn't you simply use plain VQ with a larger codebook? By employing a codebook with $$n^m$$ vectors, the probability of "collision" would also be $$(1 / n)^m$$. Seems reasonable, right? Well, let me explain why RVQ is still a better choice than VQ with a larger codebook in this case.
 
 Suppose all our vectors, i.e. the vectors to be quantized as well as codebook vectors, have $$p$$ elements each. If we were to use a codebook of size $$n^m$$, we would be dealing with $$p\cdot n^m$$ different numbers that need to be stored in memory. With RVQ, on the other hand, we would need only $$p\cdot n\cdot m$$ different numbers.
 Also, remember I said this RVQ wizardry is used by state-of-the-art neural audio codecs? What if I told you these "numbers" are nothing but the learnable parameters of a neural network? Let's pick some arbitrary yet reasonable values for $$n$$, $$m$$ and $$p$$: let's say $$n = 512$$, $$m = 8$$ and $$p = 2048$$. If we decide to go for plain VQ, we would have to learn $$p\cdot n^m = 2048\cdot 512^8 = 9671406556917033397649408$$ parameters. Using RVQ, on the other hand, we would have to learn just $$p\cdot n\cdot m = 2048\cdot 512\cdot 8 = 8388608$$ parameters.
@@ -158,16 +158,16 @@ Also, remember I said this RVQ wizardry is used by state-of-the-art neural audio
 
 Now that we learned how Neural Audio Codecs and RVQ work, you might be left with one last doubt: what's the connection between them and state-of-the-art AI models for tasks like Text-to-Speech and Speech-to-Speech translation? Sure, they can compress audio efficiently with minimal loss in quality, but how is that relevant?
 
-As it turns out, RVQ-based Neural Audio Codecs can serve as the equivalent of text tokenizers for audio, with a small difference owing to their residual nature: while text tokenizers turn text sequences into integers representing indices of *tokens* in a vocabulary, RVQ-based Neural Audio Codecs turn audio sequences into *vectors* of integers with $$m$$ elements, where $$m$$ is the number of codebooks. The $$i$$-th element of each vector represents the index of the codebook vector corresponding to $$\tilde{V}_q^i$$.
-Here are some plausible outputs of some hypothetic text tokenizer and RVQ:
+As it turns out, RVQ-based Neural Audio Codecs can serve as the equivalent of text tokenizers for audio, with a small difference owing to their residual nature: while text tokenizers turn text sequences into integers representing indices of *tokens* in a vocabulary, RVQ-based Neural Audio Codecs turn audio sequences into *vectors* of integers with $$m$$ elements, where $$m$$ is the number of codebooks. The $$i$$-th element of each vector represents the index of $$\tilde{V}_q^i$$ in the codebook $$C_i$$.
+Here are plausible outputs of some hypothetical text tokenizer and RVQ (<u>just the encoder part</u>):
 
 $$
-\text{tokenize}(\unicode{x201C}\text{Hello, world!"}) = [123092, 23234, ..., 892558]
+\text{tokenize}(\unicode{x201C}\text{Hello, world!"}) = [123092, 23234, ..., 892558] \in \mathbb{N}^p
 $$
 
 $$
 \begin{align}
-  \text{rvq}(🔊) &= [
+  \text{rvq_encoder}(🔊) &= [
     \begin{pmatrix}
          345 \\
          981 \\
@@ -187,7 +187,7 @@ $$
          \vdots \\
          812
        \end{pmatrix}
-    ]
+    ] \in \mathbb{N}^{m \times q}
 \end{align}
 $$
 
