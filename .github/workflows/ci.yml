@@ -21,7 +21,6 @@ jobs:
       - name: Build site
         env:
           JEKYLL_ENV: production
-          FOLLOW_IT_VERIFICATION_CODE: ${{ secrets.FOLLOW_IT_VERIFICATION_CODE }}
         run: bundle exec appraisal jekyll build --future --config _config_ci.yml,_config.yml
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
