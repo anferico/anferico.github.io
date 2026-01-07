@@ -16,7 +16,7 @@ img.not-found {
     margin: 1.25rem 1.25rem 1.25rem 0.3125rem;
     border: 1px solid #eee;
     border-left-width: 0.3125rem;
-    border-radius: 0.3125rem 0.1875rem 0.1875rem 0.3125rem;
+    border-radius: 25px;
 }
 
 .box-hands-on {
@@ -36,6 +36,16 @@ p:has(+ div.highlighter-rouge) {
     margin-bottom: 0;
 }
 
+.box-nerd-corner {
+    padding: 0.9375rem 0.9375rem 0.9375rem 0.625rem;
+    margin: 1.25rem 1.25rem 1.25rem 0.3125rem;
+    border: 1px solid #eee;
+    border-left-width: 0.3125rem;
+    border-radius: 25px;
+    background-color: #f4e5db;
+    border-left-color: #c05f2b;
+}
+
 /* Copy code to clipboard */
 
 span.language-name {
@@ -51,8 +61,12 @@ div.copy-code {
     display: flex;
     justify-content: space-between;
     background-color: #444444;
-    border-top-left-radius: 0.25rem;
-    border-top-right-radius: 0.25rem;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+pre.highlight {
+    border-radius: 0px;
 }
 
 div.copy-code > button {
@@ -62,7 +76,7 @@ div.copy-code > button {
     color: #ffffff;
     border-width: 0;
     outline: none;
-    border-top-right-radius: 0.25rem;
+    border-top-right-radius: 10px;
 }
 
 .intro-header.big-img .post-heading {
@@ -99,3 +113,90 @@ details div {
     width: 100%;
     max-width: 100%;
 }
+
+/* Styles for email subscription form */
+.followit--follow-form-container[attr-a][attr-b][attr-c][attr-d][attr-e][attr-f] .form-preview {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    padding: clamp(17px, 5%, 40px) clamp(17px, 7%, 50px) !important;
+    max-width: none !important;
+    border-radius: 6px !important;
+}
+
+.followit--follow-form-container[attr-a][attr-b][attr-c][attr-d][attr-e][attr-f] .form-preview,
+.followit--follow-form-container[attr-a][attr-b][attr-c][attr-d][attr-e][attr-f] .form-preview *{
+    box-sizing: border-box !important;
+}
+.followit--follow-form-container[attr-a][attr-b][attr-c][attr-d][attr-e][attr-f] .form-preview .preview-heading {
+    width: 100% !important;
+}
+.followit--follow-form-container[attr-a][attr-b][attr-c][attr-d][attr-e][attr-f] .form-preview .preview-heading h5{
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+}
+.followit--follow-form-container[attr-a][attr-b][attr-c][attr-d][attr-e][attr-f] .form-preview .preview-input-field {
+    margin-top: 20px !important;
+    width: 100% !important;
+}
+.followit--follow-form-container[attr-a][attr-b][attr-c][attr-d][attr-e][attr-f] .form-preview .preview-input-field input {
+    width: 100% !important;
+    height: 40px !important;
+    border-radius: 6px !important;
+    border: 2px solid #e9e8e8 !important;
+    background-color: #fff;
+    outline: none !important;
+}
+.followit--follow-form-container[attr-a][attr-b][attr-c][attr-d][attr-e][attr-f] .form-preview .preview-input-field input {
+    color: #000000 !important;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    text-align: center;
+}
+.followit--follow-form-container[attr-a][attr-b][attr-c][attr-d][attr-e][attr-f] .form-preview .preview-input-field input::placeholder {
+    color: #000000 !important;
+    opacity: 1 !important;
+}
+
+.followit--follow-form-container[attr-a][attr-b][attr-c][attr-d][attr-e][attr-f] .form-preview .preview-input-field input:-ms-input-placeholder {
+    color: #000000 !important;
+}
+
+.followit--follow-form-container[attr-a][attr-b][attr-c][attr-d][attr-e][attr-f] .form-preview .preview-input-field input::-ms-input-placeholder {
+    color: #000000 !important;
+}
+.followit--follow-form-container[attr-a][attr-b][attr-c][attr-d][attr-e][attr-f] .form-preview .preview-submit-button {
+    margin-top: 10px !important;
+    width: 100% !important;
+}
+.followit--follow-form-container[attr-a][attr-b][attr-c][attr-d][attr-e][attr-f] .form-preview .preview-submit-button button {
+    width: 100% !important;
+    height: 40px !important;
+    border: 0 !important;
+    border-radius: 6px !important;
+    line-height: 0px !important;
+}
+.followit--follow-form-container[attr-a][attr-b][attr-c][attr-d][attr-e][attr-f] .form-preview .preview-submit-button button:hover {
+    cursor: pointer !important;
+}
+.followit--follow-form-container[attr-a][attr-b][attr-c][attr-d][attr-e][attr-f] .powered-by-line {
+    color: #231f20 !important;
+    font-family: "Montserrat" !important;
+    font-size: 13px !important;
+    font-weight: 400 !important;
+    line-height: 25px !important;
+    text-align: center !important;
+    text-decoration: none !important;
+    display: flex !important;
+    width: 100% !important;
+    justify-content: center !important;
+    align-items: center !important;
+    margin-top: 10px !important;
+}
+.followit--follow-form-container[attr-a][attr-b][attr-c][attr-d][attr-e][attr-f] .powered-by-line img {
+    margin-left: 10px !important;
+    height: 1.13em !important;
+    max-height: 1.13em !important;
+}
+/* End of styles for email subscription form */
