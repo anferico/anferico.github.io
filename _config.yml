@@ -192,6 +192,9 @@ site-css:
 # you should switch to using the `gtag` field above instead.
 #google_analytics: "UA-XXXXXXXX-X"
 
+# Follow.it verification code - set via environment variable FOLLOW_IT_VERIFICATION_CODE
+follow_it_verification_code: "{{ env.FOLLOW_IT_VERIFICATION_CODE }}"
+
 ####################
 # --- Comments --- #
 ####################
