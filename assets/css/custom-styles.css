@@ -200,3 +200,117 @@ details div {
     max-height: 1.13em !important;
 }
 /* End of styles for email subscription form */
+
+/* Modern and fancy header styling for blog posts */
+.blog-post h1 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-top: 2.5rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 3px solid;
+    border-image: linear-gradient(90deg, var(--link-col), var(--hover-col)) 1;
+    background: linear-gradient(135deg, var(--text-col) 0%, var(--link-col) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    position: relative;
+    line-height: 1.2;
+}
+
+.blog-post h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-top: 2.25rem;
+    margin-bottom: 1.25rem;
+    padding-left: 1rem;
+    position: relative;
+    color: var(--text-col);
+    transition: all 0.3s ease;
+    line-height: 1.3;
+}
+
+.blog-post h2::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: linear-gradient(180deg, var(--link-col), var(--hover-col));
+    border-radius: 2px;
+    opacity: 0.8;
+}
+
+.blog-post h2:hover {
+    padding-left: 1.25rem;
+    color: var(--link-col);
+}
+
+.blog-post h3 {
+    font-size: 1.625rem;
+    font-weight: 600;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    color: var(--text-col);
+    line-height: 1.4;
+}
+
+.blog-post h4 {
+    font-size: 1.375rem;
+    font-weight: 600;
+    margin-top: 1.75rem;
+    margin-bottom: 0.875rem;
+    padding-left: 0.75rem;
+    position: relative;
+    color: var(--text-col);
+    line-height: 1.4;
+}
+
+.blog-post h4::before {
+    content: '▪';
+    position: absolute;
+    left: 0;
+    color: var(--link-col);
+    font-size: 0.8em;
+    line-height: 1.5;
+    opacity: 0.6;
+}
+
+.blog-post h5 {
+    font-size: 1.125rem;
+    font-weight: 600;
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+    color: var(--text-col);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    opacity: 0.9;
+}
+
+.blog-post h6 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-top: 1.25rem;
+    margin-bottom: 0.625rem;
+    color: var(--mid-col);
+    font-style: italic;
+}
+
+/* Add spacing after headers to separate from content */
+.blog-post h1 + *,
+.blog-post h2 + *,
+.blog-post h3 + *,
+.blog-post h4 + *,
+.blog-post h5 + *,
+.blog-post h6 + * {
+    margin-top: 0;
+}
+
+/* Ensure proper spacing when headers are followed by paragraphs */
+.blog-post h1 + p,
+.blog-post h2 + p,
+.blog-post h3 + p,
+.blog-post h4 + p {
+    margin-top: 0.75rem;
+}

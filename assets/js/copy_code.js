@@ -6,6 +6,7 @@ codeBlocks.forEach(function (codeBlock) {
     copyButton.type = 'button';
     copyButton.ariaLabel = 'Copy code to clipboard';
     copyButton.innerText = '📋 Copy code';
+    copyButton.style.fontFamily = 'var(--body-font)';
 
     var languageSpan = document.createElement('span');
     languageSpan.className = 'language-name';
