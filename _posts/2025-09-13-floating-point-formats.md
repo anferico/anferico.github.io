@@ -2,7 +2,7 @@
 layout: post
 title: "Exotic floating-point formats"
 subtitle: "Training large-scale neural networks with low precision"
-cover-img: /assets/img/posts/2025-09-13-floating-point-formats/cover_raw.png
+cover-img: /assets/img/posts/2025-09-13-floating-point-formats/cover_cropped.png
 thumbnail-img: /assets/img/posts/2025-09-13-floating-point-formats/thumb.png
 share-img: /assets/img/posts/2025-09-13-floating-point-formats/thumb.png
 # gh-repo: daattali/beautiful-jekyll

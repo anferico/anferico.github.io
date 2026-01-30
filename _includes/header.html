@@ -17,19 +17,74 @@
 {% endif %}
 
 <header class="header-section {% if page.cover-img %}has-img{% endif %}">
-<div class="intro-header {% if page.cover-img %} big-img {% endif %}">
-  {% if page.cover-img or page.title %}
-  <div class="container-md">
-    <div class="row">
-      <div class="col-xl-8 offset-xl-2 col-lg-10 offset-lg-1">
-        <div class="{{ include.type }}-heading">
-          <h2 style="text-align: center;">{% if page.title %}{{ page.title | strip_html }}{% else %}<br/>{% endif %}</h2>
-          {% if page.subtitle %}
-            <hr class="small">
-            {% if include.type == "post" %}
-              <h4 style="font-weight: 300; text-align: center;">{{ page.subtitle | strip_html }}</h4>
-              <br/>
-            {% else %}
+{% if include.type == "post" %}
+  <!-- Medium-like post layout -->
+  <div class="post-header-medium">
+    {% if page.cover-img %}
+      {% assign cover_img = page.cover-img %}
+      {% if page.cover-img.first %}
+        {% assign cover_img = page.cover-img[0].first.first %}
+      {% endif %}
+      <div class="post-cover-image">
+        <img src="{{ cover_img | absolute_url }}" alt="Cover image">
+      </div>
+    {% endif %}
+    
+    <div class="container-md">
+      <div class="row">
+        <div class="col-xl-8 offset-xl-2 col-lg-10 offset-lg-1">
+          <div class="post-heading-medium">
+            <h1 class="post-title-medium">{% if page.title %}{{ page.title | strip_html }}{% else %}<br/>{% endif %}</h1>
+            
+            {% if page.subtitle %}
+              <h2 class="post-subtitle-medium">{{ page.subtitle | strip_html }}</h2>
+            {% endif %}
+            
+            <div class="post-meta-medium">
+              <div class="post-author-info">
+                {% if site.avatar %}
+                  <img src="{{ site.avatar | absolute_url }}" alt="Author" class="author-avatar">
+                {% endif %}
+                <div class="author-details">
+                  <span class="author-name">{% if page.author %}{{ page.author | strip_html }}{% else %}{{ site.author }}{% endif %}</span>
+                  <span class="post-date">{{ page.date | date: date_format }}</span>
+                </div>
+              </div>
+              
+              <div class="post-social-links">
+                {% if site.social-network-links.github %}
+                  <a href="https://github.com/{{ site.social-network-links.github }}" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                    <i class="fab fa-github"></i>
+                  </a>
+                {% endif %}
+                {% if site.social-network-links.linkedin %}
+                  <a href="https://www.linkedin.com/in/{{ site.social-network-links.linkedin }}" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                    <i class="fab fa-linkedin"></i>
+                  </a>
+                {% endif %}
+                {% if site.social-network-links.twitter %}
+                  <a href="https://twitter.com/{{ site.social-network-links.twitter }}" target="_blank" rel="noopener noreferrer" aria-label="Twitter/X">
+                    <span class="fa-fw">𝕏</span>
+                  </a>
+                {% endif %}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% else %}
+  <!-- Original layout for non-post pages -->
+  <div class="intro-header {% if page.cover-img %} big-img {% endif %}">
+    {% if page.cover-img or page.title %}
+    <div class="container-md">
+      <div class="row">
+        <div class="col-xl-8 offset-xl-2 col-lg-10 offset-lg-1">
+          <div class="{{ include.type }}-heading">
+            <h2 style="text-align: center;">{% if page.title %}{{ page.title | strip_html }}{% else %}<br/>{% endif %}</h2>
+            {% if page.subtitle %}
+              <hr class="small">
               <div style="display: flex; justify-content: center; align-items: center; width: 100%; height: 20px;">
               <h4 style="font-weight: 300; margin: 0 6px 0 0;">{{ page.subtitle | strip_html }}</h4>
                 {% if page.name == "index.html" %}
@@ -37,36 +92,14 @@
                 {% endif %}
               </div>
             {% endif %}
-            <!-- {% if include.type == "page" %}
-              <hr class="small">
-              <span class="{{ include.type }}-subheading">{{ page.subtitle | strip_html }}</span>
-            {% else %}
-              <h2 class="{{ include.type }}-subheading">{{ page.subtitle | strip_html }}</h2>
-            {% endif %} -->
-          {% endif %}
-          
-          {% if include.type == "post" %} 
-            {% if page.author %}
-              By <strong>{{ page.author | strip_html }}</strong><br>
-            {% endif%}
-            <span class="post-meta">Posted on {{ page.date | date: date_format }}</span>
-            {% if page.last-updated %}
-              <span class="post-meta">
-                <span class="d-none d-md-inline middot">&middot;</span>
-                Last updated {{ page.last-updated | date: date_format }}
-              </span>
-            {% endif %}
-            {% if page.readtime %}
-              {% include readtime.html %}
-            {% endif %}
-          {% endif %}
+          </div>
         </div>
       </div>
     </div>
+    {% endif %}
+    {% if page.cover-img %}<span class='img-desc'></span>{% endif %}
   </div>
-  {% endif %}
-  {% if page.cover-img %}<span class='img-desc'></span>{% endif %}
-</div>
+{% endif %}
 
 {% if page.header-extra %}
   {% for file in page.header-extra %}

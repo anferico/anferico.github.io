@@ -314,3 +314,153 @@ details div {
 .blog-post h4 + p {
     margin-top: 0.75rem;
 }
+
+/* Medium-like blog post header styling */
+.post-header-medium {
+    margin-top: 3.1875rem; /* Account for navbar */
+    margin-bottom: 3rem;
+}
+
+.post-cover-image {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 2.5rem;
+    overflow: hidden;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.post-cover-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+
+.post-heading-medium {
+    max-width: 770px;
+    margin-right: 0.9375rem;
+}
+
+.post-title-medium {
+    font-size: 2.1rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    color: var(--text-col);
+    font-family: var(--header-font);
+}
+
+.post-subtitle-medium {
+    font-size: 1.25rem;
+    font-weight: 375;
+    line-height: 1.4;
+    margin-top: 0;
+    margin-bottom: 2rem;
+    color: var(--mid-col);
+    font-family: var(--header-font);
+}
+
+.post-meta-medium {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 1.5rem;
+    border-top: 1px solid #e6e6e6;
+}
+
+.post-author-info {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.author-avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.author-details {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.author-name {
+    font-weight: 600;
+    font-size: 0.9375rem;
+    color: var(--text-col);
+    line-height: 1.4;
+}
+
+.post-date {
+    font-size: 0.875rem;
+    color: var(--mid-col);
+    line-height: 1.4;
+}
+
+.post-social-links {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.post-social-links a {
+    color: var(--text-col);
+    font-size: 1.25rem;
+    text-decoration: none;
+    transition: color 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+}
+
+.post-social-links a:hover {
+    color: var(--link-col);
+}
+
+.post-social-links a .fa-fw {
+    font-size: 1.25rem;
+    line-height: 1;
+}
+
+/* Responsive adjustments */
+/* @media (max-width: 768px) {
+    .post-title-medium {
+        font-size: 2rem;
+    }
+    
+    .post-subtitle-medium {
+        font-size: 1.25rem;
+    }
+    
+    .post-meta-medium {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+    
+    .post-social-links {
+        align-self: flex-end;
+    }
+}
+
+@media (min-width: 1200px) {
+    .post-header-medium {
+        margin-top: 5.6875rem;
+    }
+    
+    .post-title-medium {
+        font-size: 3rem;
+    }
+    
+    .post-subtitle-medium {
+        font-size: 1.75rem;
+    }
+} */

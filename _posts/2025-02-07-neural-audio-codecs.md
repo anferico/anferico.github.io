@@ -2,7 +2,7 @@
 layout: post
 title: "Neural Audio Codecs & (Residual) Vector Quantization"
 subtitle: "The technology behind State-of-the-Art Audio AI models"
-cover-img: /assets/img/posts/2023-12-24-neural-audio-codecs/cover.png
+cover-img: /assets/img/posts/2023-12-24-neural-audio-codecs/cover_cropped.png
 thumbnail-img: /assets/img/posts/2023-12-24-neural-audio-codecs/thumb.png
 share-img: /assets/img/posts/2023-12-24-neural-audio-codecs/thumb.png
 # gh-repo: daattali/beautiful-jekyll
