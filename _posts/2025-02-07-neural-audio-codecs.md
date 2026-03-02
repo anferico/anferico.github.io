@@ -5,6 +5,7 @@ subtitle: "The technology behind State-of-the-Art Audio AI models"
 cover-img: /assets/img/posts/2023-12-24-neural-audio-codecs/cover.png
 thumbnail-img: /assets/img/posts/2023-12-24-neural-audio-codecs/thumb.png
 share-img: /assets/img/posts/2023-12-24-neural-audio-codecs/thumb.png
+show-avatar: false
 # gh-repo: daattali/beautiful-jekyll
 # gh-badge: [star, fork, follow]
 tags: [deep-learning, audio, neural-audio-codecs]

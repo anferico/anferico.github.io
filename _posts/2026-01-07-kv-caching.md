@@ -5,6 +5,7 @@ subtitle: "A basic optimization for autoregressive generation with Transformers"
 cover-img: /assets/img/posts/2026-01-07-kv-caching/cover.png
 thumbnail-img: /assets/img/posts/2026-01-07-kv-caching/thumb.png
 share-img: /assets/img/posts/2026-01-07-kv-caching/thumb.png
+show-avatar: false
 # gh-repo: daattali/beautiful-jekyll
 # gh-badge: [star, fork, follow]
 tags: [transformers, attention]
