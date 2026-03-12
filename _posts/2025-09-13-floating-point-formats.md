@@ -5,12 +5,12 @@ subtitle: "Training large-scale neural networks with low precision"
 cover-img: /assets/img/posts/2025-09-13-floating-point-formats/cover.png
 thumbnail-img: /assets/img/posts/2025-09-13-floating-point-formats/thumb.png
 share-img: /assets/img/posts/2025-09-13-floating-point-formats/thumb.png
+show-avatar: false
 # gh-repo: daattali/beautiful-jekyll
 # gh-badge: [star, fork, follow]
 tags: [deep-learning, bfloat16, mixed-precision-training]
 comments: true
 author: Francesco Cariaggi
-show-avatar: false
 ---
 
 In this blog post, I will strive to provide a down-to-earth introduction to "exotic" [floating-point](https://en.wikipedia.org/wiki/Floating-point_arithmetic) formats, with a special focus on how they can be leveraged to efficiently train large-scale AI models. By the end of this blog post, you will be aware of both the positive *and* negative implications regarding the use of these formats as opposed to more traditional ones like [float 32](https://en.wikipedia.org/wiki/Single-precision_floating-point_format), and hence be able to determine which one lends itself best to your use case.
